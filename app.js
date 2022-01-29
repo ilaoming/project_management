@@ -23,4 +23,7 @@ app.use(allowCrossDomain)
 const route_public = require('./routes/public')
 app.use(route_public)
 
-
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, function () {
+  console.log("server start");
+});
