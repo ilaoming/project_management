@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+var pool = mysql.createPool({
+    connectionLimit: 20,
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'bbace32c8d270a',
+    password: 'a7dceed3',
+    database: 'heroku_39362541af4d62a',
+  });
+  
+
 //Settings
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -20,8 +29,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(allowCrossDomain)
 
-const route_public = require('./routes/public')
-app.use(route_public)
+  //Route
+  app.get('/',(req,res) =>{
+    res.send(`Wellcome to my API!`)
+})
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {
