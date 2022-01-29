@@ -4,16 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ilaoming/project_management.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ilaoming/project_management/issues"
+    "start": "app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.1",
